@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class BStack_page extends SeleniumDriver{
@@ -23,9 +24,10 @@ public class BStack_page extends SeleniumDriver{
 		myObj.close();
 		we.get("https://www.w3schools.com/howto/howto_html_file_upload_button.asp");
 		String path = System.getProperty("user.dir")+"\\src\\uploadFiles\\"+randnum+".wav";
-		Thread.sleep(3000);
-		this.sendData(path, "//input[@id='myFile']", "xpath");
-		return true;
+		we.findElement(By.xpath("//input[@id='myFile']")).sendKeys(path);
+
+		//		this.sendData(path, "//input[@id='myFile']", "xpath");
+		return false;
 
 	}
 	public boolean test2() {
