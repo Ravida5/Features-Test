@@ -6,13 +6,14 @@ import java.util.Random;
 
 import org.openqa.selenium.WebDriver;
 
-public class BStack_page {
+public class BStack_page extends SeleniumDriver{
 	public WebDriver we;
-	public BStack_page(WebDriver we) {
+	public BStack_page(WebDriver we) throws SecurityException, IOException {
+		super(we);
 		this.we = we; 
 	}
 
-	public boolean test1() throws IOException {
+	public boolean test1() throws IOException, InterruptedException {
 		//		we.get("http://www.google.com");
 		//		return we.getTitle().equalsIgnoreCase("Google");
 		int randnum1 = new Random().nextInt(10000); 
@@ -20,6 +21,10 @@ public class BStack_page {
 		FileWriter  myObj = new FileWriter(System.getProperty("user.dir")+"//src//uploadFiles//"+randnum+".wav");
 		myObj.write("abcd");
 		myObj.close();
+		we.get("https://www.w3schools.com/howto/howto_html_file_upload_button.asp");
+		String path = System.getProperty("user.dir")+"\\src\\uploadFiles\\"+randnum+".wav";
+		this.sendData(path, "//input[@id='myFile']", "xpath");
+		Thread.sleep(2000);
 		return true;
 
 	}
