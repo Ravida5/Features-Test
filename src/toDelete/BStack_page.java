@@ -22,7 +22,7 @@ public class BStack_page extends SeleniumDriver{
 		myObj.write("abcd");
 		myObj.close();
 		we.get("https://www.w3schools.com/howto/howto_html_file_upload_button.asp");
-		String path = System.getProperty("user.dir")+"//src//uploadFiles//"+randnum+".wav";
+		String path = System.getProperty("user.dir")+"\\src\\uploadFiles\\"+randnum+".wav";
 		this.sendData(path, "//input[@id='myFile']", "xpath");
 		Thread.sleep(2000);
 		return true;
