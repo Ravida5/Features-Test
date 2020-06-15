@@ -18,11 +18,11 @@ public class BStack_page extends SeleniumDriver{
 		//		return we.getTitle().equalsIgnoreCase("Google");
 		int randnum1 = new Random().nextInt(10000); 
 		String randnum = Integer.toString(randnum1);
-		FileWriter  myObj = new FileWriter(System.getProperty("user.dir")+"//src//uploadFiles//"+randnum+".wav");
+		FileWriter  myObj = new FileWriter(System.getProperty("user.dir")+"/src/uploadFiles/"+randnum+".wav");
 		myObj.write("abcd");
 		myObj.close();
 		we.get("https://www.w3schools.com/howto/howto_html_file_upload_button.asp");
-		String path = System.getProperty("user.dir")+"\\src\\uploadFiles\\"+randnum+".wav";
+		String path = System.getProperty("user.dir")+"/src/uploadFiles/"+randnum+".wav";
 		this.sendData(path, "//input[@id='myFile']", "xpath");
 		Thread.sleep(2000);
 		return true;
