@@ -1,5 +1,6 @@
 package toDelete;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
@@ -17,15 +18,15 @@ public class BStack_page extends SeleniumDriver{
 	public boolean test1() throws IOException, InterruptedException {
 		//		we.get("http://www.google.com");
 		//		return we.getTitle().equalsIgnoreCase("Google");
-		int randnum1 = new Random().nextInt(10000); 
-		String randnum = Integer.toString(randnum1);
-		FileWriter  myObj = new FileWriter(System.getProperty("user.dir")+"/src/uploadFiles/"+randnum+".wav");
-		myObj.write("abcd");
-		myObj.close();
+//		int randnum1 = new Random().nextInt(10000); 
+//		String randnum = Integer.toString(randnum1);
+//		FileWriter  myObj = new FileWriter(System.getProperty("user.dir")+"/src/uploadFiles/"+randnum+".wav");
+//		myObj.write("abcd");
+//		myObj.close();
 		we.get("https://www.w3schools.com/howto/howto_html_file_upload_button.asp");
-		String path = System.getProperty("user.dir")+"\\src\\uploadFiles\\6089.wav";
+		String path = System.getProperty("user.dir")+"/src/uploadFiles/6089.wav";
 		we.findElement(By.xpath("//input[@id='myFile']")).sendKeys(path);
-
+		System.out.println(new File(System.getProperty("user.dir")+"/src/uploadFiles/").listFiles().length);
 		//		this.sendData(path, "//input[@id='myFile']", "xpath");
 		return false;
 
